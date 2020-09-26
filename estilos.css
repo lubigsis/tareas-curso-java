@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color:#dfe2ea;
+}
+/*..............................................header*/
+header{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+}
+.container-header{
+    width: 100%;
+    max-width: 1200px;/*define el ancho máximo que un elemento puede tener.*/
+    margin:auto;
+}
+.logo-title{
+    display: flex; /*p/ que el texto se coloque al lado del logo*/
+}
+.logo-title img{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: #ff4b5c 1px solid;
+}
+.logo-title h3{
+    color:#f86473;
+    font-weight: 100;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+/*.........................................................portada...........*/
+
+.container-portada{
+    width: 100%;
+    height: 400px;
+    background-image: url(img/portada.jpg);
+    /*background-size: 150%;/*p/q la imagen se pueda mover, escalar*/
+    animation: movimiento 16s infinite linear alternate; /*'infinite' p/q no se detenga el movimiento
+    'linear': p/ q no sea tan brusco el movimiento
+    'alternate': es para que regrese, como que la imagen rebote*/
+    
+    position: relative;/*p/qlos otros contenedores hijos se posicionen en relación a éste*/
+}
+
+@keyframes movimiento{
+    from{
+        background-position: bottom left;
+    }to{
+        background-position: top right;
+    }
+}
+
+.capa-gradient{
+    width: 100%;
+    height: 100%;
+    position: absolute;/* la ubicación de un elemento con position:absolute se fija con respecto a la esquina superior izquierda de la página, a menos que ese elemento tenga un antepasado posicionado (es decir, con un valor relative, absolute o fixed para position), en cuyo caso su posición se fija con respecto a la esquina superior izquierda de ese antepasado.*/
+    background: -webkit-linear-gradient(left, black, rgb(70, 195, 236));/*buscar los otros prefix!*/
+    /*q el gradiente comienza de izq a der y que primero se le pasará el color negro y después el color azul*/
+    opacity: 0.6;
+}
+
+.container-details{
+    width: 100%;
+    max-width: 1200px;
+    position: relative; /*p/q el texto aparezca hacia delante*/
+    margin: auto;
+}
+
+/*..........................texto de portada.....................................*/
+
+.details{
+    width: 100%;
+    max-width: 500px;/*ancho máximo*/
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #fff;
+}
+.details h1{
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.details h2{
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.details p{
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 100;
+}
+.details button{
+    padding: 10px 20px;
+    font-size: 15px;
+    background: none;
+    border-style: none;
+    border:1px solid #fff;
+    color: #fff;
+    margin-top: 20px;
+    transition: background 300ms;/*p/q el efecto hover sea solo en el background y sea de esa duración*/
+    cursor: pointer;
+}
+.details button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.details button:hover{
+    background: rgb(44, 40, 40);
+    /*color:black;    /*ver lo del cambio de color, por qué no lo toma al negro*/
+}
+
+/*.........................2 imágenes.........................................*/
+.contenedor-gatos{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+}
+
+.foto-gato{
+    width:210px;
+    height: 400px;
+    overflow: hidden;
+    justify-content: center;
+    margin:40px;
+    
+}
+
+.foto-gato img{
+    border-radius: 6px;
+    box-shadow: 5px 9px  6px #ff4b5c
+    
+   
+}
+
+/*..............................texto de imágenes.......................*/
+ .texto{
+    margin-top:10px;
+    text-align:center;
+}
+
+.texto button{
+    width:70%;
+    padding:8px;   
+    background: #8d93ab;
+    border:1px solid #ff4b5c;
+    margin:auto;
+    border-radius: 6px;
+    cursor:pointer;
+    
+     
+}
+
+.texto button a{
+    text-decoration: none;
+    color:#fff;
+    font-size:15px;
+    text-align:center;
+    font-weight: bold;
+   
+}
+
+.texto button:hover{
+    background: #ff4b5c;
+   
+}
+
+/*..............................pie de página...................................*/
+
+footer{
+    width:100%;
+    height: 40px;
+    margin:0;
+    padding: 10px;
+    background-color: #393b44;
+    display: flex;
+    justify-content:center;
+}
+
+footer p a{
+    color:#fff;
+    text-decoration: none;   
+    padding:9px; 
+}
+
+footer p a:hover{
+    background-color: #ff4b5c;
+    color:rgb(192, 205, 50);
+}
