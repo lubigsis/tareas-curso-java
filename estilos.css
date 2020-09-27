@@ -41,13 +41,14 @@ header{
     width: 100%;
     height: 400px;
     background-image: url(img/portada.jpg);
-    /*background-size: 150%;/*p/q la imagen se pueda mover, escalar*/
+    background-size: 100%;/*p/q la imagen se pueda mover, escalar*/
     animation: movimiento 16s infinite linear alternate; /*'infinite' p/q no se detenga el movimiento
     'linear': p/ q no sea tan brusco el movimiento
     'alternate': es para que regrese, como que la imagen rebote*/
-    
-    position: relative;/*p/qlos otros contenedores hijos se posicionen en relación a éste*/
+     position: relative;/*p/qlos otros contenedores hijos se posicionen en relación a éste*/
 }
+
+
 
 @keyframes movimiento{
     from{
